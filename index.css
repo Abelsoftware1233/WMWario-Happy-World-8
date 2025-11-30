@@ -1,0 +1,148 @@
+:root {
+  --text-white: #f5f5f5;
+  --bg-black: #18314f;
+  --bg-blue: #6990f6;
+}
+
+body {
+  background-color: var(--bg-black);
+}
+
+main {
+  max-width: 1024px;
+  margin: 0 auto;
+  color: var(--text-white);
+}
+
+.game {
+  width: 100%;
+  min-height: 440px;
+  overflow: hidden;
+  position: relative;
+  background-image: url('./assets/background.png');
+  background-size: 600px 500px;
+  background-position: center;
+}
+
+.mario {
+  width: 65px;
+  height: 65px;
+  position: absolute;
+  left: 20px;
+  z-index: 1;
+}
+
+.obstacle {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 0;
+  width: 50px;
+  height: 49px;
+}
+
+.spin {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button-group {
+  display: flex;
+  gap: 4px;
+}
+
+.button-group > button {
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.audio-toggle {
+  border: none;
+  padding: 0;
+  margin: 0 0 0 4px;
+  text-decoration: none;
+  background-color: transparent;
+
+  width: 20px;
+  height: auto;
+  background-image: url('./assets/sound-off.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.github-link {
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: none;
+}
+
+.github-link > img {
+  width: 28px;
+  height: auto;
+}
+
+.control {
+  background-color: var(--bg-blue);
+  border-bottom: #5c84f5 1px solid;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.score-heading {
+  width: fit-content;
+  margin-left: auto;
+}
+
+.score-heading > .score {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+aside > .guide {
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+kbd {
+  background-color: var(--text-white);
+  border-radius: 3px;
+  border: 1px solid #b4b4b4;
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.2),
+    0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+  color: #333;
+  display: inline-block;
+  font-size: 0.85em;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 4px;
+  white-space: nowrap;
+}
+
+.dialog-failed::backdrop {
+  background: rgba(0, 0, 0, 0.33);
+  backdrop-filter: blur(4px);
+}
+
+.dialog-failed form {
+  width: 200px;
+  text-align: center;
+}

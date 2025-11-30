@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      name="viewport"
+    />
+    <link href="assets/favicon.png" rel="icon" type="image/x-icon" />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+    <meta content="var(--bg-black)" name="theme-color" />
+    <link href="index.css" rel="stylesheet" />
+    <title>Super Mario</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h2>Super Mario</h2>
+        <a class="github-link" href="https://github.com/romantech/super-mario" target="_blank">
+          <img alt="Go to github repository" src="./assets/github.png" />
+        </a>
+      </header>
+      <section class="control">
+        <nav class="button-group">
+          <button class="button-start" type="button">Start</button>
+          <button class="button-stop" type="button">Stop</button>
+          <button class="button-restart" disabled type="button">Restart</button>
+          <button class="audio-toggle" type="button"></button>
+        </nav>
+        <h3 class="score-heading">Score <span class="score">0</span></h3>
+      </section>
+      <section class="game"></section>
+      <aside>
+        <p class="guide">Press <kbd>space</kbd> or <kbd>touch</kbd> to jump</p>
+      </aside>
+    </main>
+    <!-- method="dialog"으로 지정해두면 버튼 클릭시 "제출"로 인식해서 dialog 닫고(새로고침 안함),
+    dialog 요소의 returnValue 속성에서 클릭한 버튼의 value 값을 가져올 수 있음 -->
+    <dialog class="dialog-failed">
+      <form method="dialog">
+        <h2>Game Over</h2>
+        <p>Your score is <span class="score-dialog">0</span></p>
+        <button value="close">OK</button>
+        <button value="restart">Restart</button>
+      </form>
+    </dialog>
+    <script src="./main.js" type="module"></script>
+  </body>
+</html>
